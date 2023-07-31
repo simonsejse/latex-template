@@ -1,0 +1,33 @@
+\section{Box extensions}
+
+I've used \term{tcolorbox} to create a bunch of different boxes that can be used throughout the program. Look in the \term{boxes.tex} file, to see how they're defined and used.
+
+
+\subsection{Sample Syntax Demonstrations}
+Here we will demonstrate how the syntax box works and is used. 
+
+\subsubsection*{Without example usage:}
+\newsyntax{Syntax for syntax box without usage}{syntax label}{syntax/syntax}
+
+\subsubsection*{With example usage:}
+\newsyntax{Syntax for syntax box with usage}{syntax label}{syntax/syntax}{syntax/output}{xml}
+
+
+\subsection{Sample Code Demonstrations}
+These boxes allow you to present various types of code snippets, whether they produce an output or not. We've showcased this flexibility with C and Java code examples. This framework isn't limited to just these languages - if \term{lstlisting} doesn't include your desired language, you have the freedom to create your own set. It's a versatile way to enhance code visibility and comprehension.
+
+\subsubsection{C Code Example (No Output)}
+
+\newlisting{A \term{C} code example \emph{without} output}{c example code}{C}{code/program.c}
+
+\subsubsection{C Code Example (Includes Output)}
+\newlisting{A \term{C} code example \emph{with} output}{c example code}{C}{code/program.c}{code/output}
+
+\subsubsection{Java Code Example (No Output)}
+\newlisting{A \term{Java} code example \emph{without} output}{java example code}{Java}{code/program.java}
+
+\subsection{Sample Definition Demonstrations}
+\subsection{Sample Table Demonstrations}
+
+
+\subsection{Making References to the Boxes}

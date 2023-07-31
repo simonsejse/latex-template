@@ -1,0 +1,68 @@
+% -------------------------------------------------
+%               ALL SIMPLE COMMANDS
+% -------------------------------------------------
+
+% -------------------------------------------------
+% `In other words` COMMAND DEFINITION
+% -------------------------------------------------
+% \ie{<text>}
+% 
+% This command provides a shortcut for "in other words", automatically 
+% formatting the argument in parentheses with "i.e., " at the beginning.
+%
+% Arguments:
+%  #1: The text that should follow "i.e., "
+%
+% Usage:
+%  \ie{only one potential change in ...}
+%
+% Example:
+%  A class should have only a single responsibility \ie{only one potential change in ...}
+% This would produce: A class should have only a single responsibility (i.e., only one potential change in ...)
+%
+% Version 1.0, last updated 19-06-2023
+\NewDocumentCommand\ie{m}{%
+(i.e., #1)\unskip
+}
+
+% -------------------------------------------------
+% Emphasise words
+% -------------------------------------------------
+% \newword{<text>}
+% 
+% This command provides a way to emphasize a particular word, automatically 
+% formatting the argument in bold text.
+%
+% Arguments:
+%  #1: The text that should be emphasized in bold.
+%
+% Usage:
+%  \newword{important term}
+%
+% Example:
+%  It is essential to understand the \newword{encapsulation} in OOP.
+% This would produce: It is essential to understand the **encapsulation** in OOP.
+%
+% Version 1.0, last updated 18-07-2023
+\NewDocumentCommand\newword{m}{\textbf{#1}}
+
+% -------------------------------------------------
+% Notice emphasis with a noticeable labor
+% -------------------------------------------------
+% \notice{<text>}
+% 
+% This command provides a way to highlight a particular notice or piece of information, automatically 
+% formatting the argument to start with "Notice: " in bold, followed by the emphasized text in italic.
+%
+% Arguments:
+%  #1: The text that should be highlighted as a notice.
+%
+% Usage:
+%  \notice{Important note here}
+%
+% Example:
+%  \notice{This is a very important point to remember.}
+% This would produce: **Notice:** *This is a very important point to remember.*
+%
+% Version 1.0, last updated 18-07-2023
+\NewDocumentCommand\notice{m}{\textbf{Notice:} \emph{#1}\par}

@@ -1,0 +1,70 @@
+\section{Math extensions}
+
+% Extra commands just for the purposes of this document.
+\def\commandstyle{{\ttfamily\textbackslash}}
+\def\command#1{\texttt{\textbackslash #1}}
+
+The math exetensions were inspired as I was making my way through
+\cite{concrete-mathematics}, and various courses at DIKU. It seems to me that
+these macros are useful in general.
+
+\subsection{Groups}
+
+Very often, mathematical expressions make use of grouping constructs such as
+$\ceil{}$, $\floor{}$, $\p{}$, etc. These constructs are relatively easy to use
+in \LaTeX (with the \mono{amsmath} package), despite the fact that one has to
+often distinguish between the left and right connectives, as with e.g.
+\command{lfoor} and \command{rfloor}. What makes these groups particularly
+impractical however, is that the height of the connectives is not automatically
+adjusted to the content they enclose. To this end, one may resort to using the
+commands \command{left} and \command{right}, as respective connective
+prefixes\dots Yuk!  This lead to the specification of the following macros:
+
+\vspace{0.1in}
+
+\noindent
+\begin{tabular}{lcl}
+
+\command{ceil\{group\}} & $\ceil{\mathtt{group}}$ \\
+
+\command{floor\{group\}} & $\floor{\mathtt{group}}$ \\
+
+\command{set\{group\}} & $\set{\mathtt{group}}$ \\
+
+\command{seq\{group\}} & $\seq{\mathtt{group}}$ & (as in, \emph{sequence}) \\
+
+\command{card\{group\}} & $\card{\mathtt{group}}$ & (as in, \emph{cardinality})
+\\
+
+\command{chev\{group\}} & $\chev{\mathtt{group}}$ & (as in, \emph{chevrons}) \\
+
+\command{p\{group\}} & $\p{\mathtt{group}}$ & (as in, \emph{parenstheses}) \\
+
+\command{st\{group\}} & $\st{\mathtt{group}}$ & (as in, \emph{such that})
+
+\end{tabular}
+
+\subsection{Backus-Naur Form}
+
+\vspace{0.1in}
+
+\noindent
+\begin{tabular}{lcl}
+
+\command{nonterm\{group\}} & $\nonterm{group}$ \\
+
+\command{term\{group\}} & $\term{group}$
+
+\end{tabular}
+
+\subsection{Cormen}
+
+\begin{codebox}
+\Procname{$\proc{Merge-Sort}(A,p,r)$}
+\li \If $p < r$ \Then
+\li $q \gets \floor{(p + r) / 2}$
+\li $\proc{Merge-Sort}(A, p, q)$
+\li $\proc{Merge-Sort}(A, q + 1, r)$
+\li $\proc{Merge}(A, p, q, r)$
+\End
+\end{codebox}

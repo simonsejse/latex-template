@@ -1,0 +1,35 @@
+\documentclass[a4paper]{article}
+
+\usepackage[fancy]{setup/template}
+\usepackage{setup/survival-pack}
+\usepackage{setup/boxes}
+\usepackage{setup/simplecommands}
+\usepackage{setup/colors}
+
+\setup{%
+  subject={\LaTeX},%
+  assignment={Template @ DIKU, v. 1.1},%
+  date={Juni 26, 2023.}%
+}
+\setupLocation[short=DIKU]{Datalogisk institut, Copenhagen University}
+\setupAuthor[addendum={\email{zlp616@alumni.ku.dk}}]{Simon Wiknther}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{first} % no fancy header on first page (just a fancy footer).
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
+\input{sections/math}
+
+\input{sections/boxes}
+
+\input{sections/references}
+
+\end{document}
+

@@ -1,0 +1,274 @@
+% tcolorboxes (definitions of boxes)
+\RequirePackage[most]{tcolorbox}
+\NeedsTeXFormat{LaTeX2e}
+
+
+%================================
+% INTRODUCTION
+% Be aware of the property 'number within=section'
+% It declares what it looks like within that section.
+% TO CREATE A NEW BOX BE AWARE OF:
+% \newtcbtheorem[number within=section]{claim}{Definition}
+% claim is like the environment so like \begin{claim} so 
+% It's very important that it's unique or everything explodes
+% The 'Definition' is just the "name" or "title" so it doesn't
+% have to be unique :)
+% And also if you look at the very last brackets at \newtcbtheorem 
+% you have a bracket defining the label like {th} which would 
+% correspond to \ref{th:}
+%================================
+
+
+
+
+% XML Language Set
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{mydarkblue},
+  identifierstyle=\color{mypurple},
+  keywordstyle=\color{blue},
+  morekeywords={xmlns,version}% list your attributes here
+}
+
+
+% General Language SET
+\lstset{
+    basicstyle=\ttfamily,
+    breaklines=true,
+    literate=%
+        {æ}{{\ae}}1
+        {å}{{\aa}}1
+        {ø}{{\o}}1
+        {œ}{{\oe}}1,
+    numbers=left,
+    numberstyle=\small\color{white},
+    numbersep=7pt,
+    xleftmargin=2pt,
+    showspaces=false,
+    columns=fullflexible,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    keywordstyle=\color{mydarkblue},
+    commentstyle=\color{mypink},
+    stringstyle=\color{mydarkpurple}
+}
+
+
+
+%================================
+% LENMA
+%================================
+\definecolor{mylenmafr}{HTML}{983b0f}
+\definecolor{mylenmabg}{HTML}{FFFAF8}
+
+\tcbuselibrary{theorems,skins,hooks}
+\newtcbtheorem[number within=section]{lenma}{Lenma \textsection\hspace*{-0.3em}}
+{%
+	enhanced,
+	breakable,
+	colback = mylenmabg,
+	frame hidden,
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{mylenmafr},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	coltitle = mylenmafr,
+	fonttitle = \bfseries\sffamily,
+	description font = \mdseries,
+	separator sign none,
+	segmentation style={solid, mylenmafr},
+}{lenma}
+
+\NewDocumentCommand\mlenma{mmm}{\begin{lenma}{#1}{#2}#3\end{lenma}}
+
+%================================
+% Definition
+%================================
+\definecolor{customgreen}{RGB}{56, 140, 70}
+
+\tcbuselibrary{theorems,skins,hooks}
+\newtcbtheorem[number within=section]{claim}{Definition \textsection\hspace*{-0.3em}}
+{%
+	enhanced
+	,breakable
+	,colback = customgreen!10
+	,frame hidden
+	,boxrule = 0sp
+	,borderline west = {2pt}{0pt}{customgreen}
+	,sharp corners
+	,detach title
+	,before upper = \tcbtitle\par\smallskip
+	,coltitle = customgreen!85!black
+	,fonttitle = \bfseries\sffamily
+	,description font = \mdseries
+	,separator sign none
+	,segmentation style={solid, customgreen!85!black}
+}{definition}
+
+\NewDocumentCommand\dfn{mmm}{\begin{claim}{#1}{#2}#3\end{claim}}
+
+
+%================================
+% Code box
+% Example:
+% \newlisting{name}{label}{language}{file_path}
+% \newlisting{Your first C program!}{intro code}{C}{intro_and_c/code/intro.c}
+%================================
+\definecolor{codebox-colback}{HTML}{EAF2F8}
+\definecolor{codebox-colframe}{HTML}{85C1E9}
+
+\tcbuselibrary{theorems,skins,hooks,listings}
+\newtcbtheorem[number within=section]{codeExample}{Code \textsection\hspace*{-0.3em}}{
+  listing and comment,
+  listing options={
+    language=C, 
+    mathescape=true
+  },
+  colframe=codebox-colframe,
+  sharp corners=downhill,
+  boxrule=1mm, %tykkelse på hele boks
+  leftrule=4.5mm, %tykkelse på v
+  left=0mm,
+  rightrule=1mm, %tykkelse på h
+  bottomrule=1mm, %tykkelse på h
+  colback=codebox-colback,
+  coltitle=white,
+  fonttitle=\normalsize\sffamily\bfseries, 
+  fontupper=\small, 
+  fontlower=\small
+}{code}
+
+\NewDocumentCommand{\newlisting}{mmmmg}{
+  \begin{codeExample}{#1}{#2}
+      \lstinputlisting[backgroundcolor=\color{codebox-colback}, language=#3]{#4}
+      \IfValueTF{#5}{
+          \par\noindent\tikz{\draw [dash pattern=on 4pt off 4pt] (0,0) -- (\textwidth+4.5mm,0);}\par\textbf{Example Output:}\par  %4.5mm is the margin of the box above^^
+          \lstinputlisting[backgroundcolor=\color{codebox-colback}, language=#3]{#5}
+      }{}
+  \end{codeExample}
+}
+
+
+%================================
+% Syntax box
+% Example:
+%
+%================================
+\definecolor{syntaxbox-colback}{HTML}{f0eaf8}
+\definecolor{syntaxbox-colframe}{HTML}{ad85e9}
+
+\tcbuselibrary{theorems,skins,hooks,listings}
+\newtcbtheorem[number within=section]{syntaxExample}{Syntax \textsection\hspace*{-0.3em}}{
+  listing and comment,
+  listing options={
+    language=C, 
+    mathescape=true
+  },
+  colframe=syntaxbox-colframe,
+  sharp corners=downhill,
+  boxrule=1mm, %tykkelse på hele boks
+  leftrule=4.5mm, %tykkelse på v
+  left=0mm,
+  rightrule=1mm, %tykkelse på h
+  bottomrule=1mm, %tykkelse på h
+  colback=syntaxbox-colback,
+  coltitle=white,
+  fonttitle=\normalsize\sffamily\bfseries, 
+  fontupper=\small, 
+  fontlower=\small
+}{syntax}
+\usepackage{dashrule}
+
+\NewDocumentCommand{\newsyntax}{m m m g g}{
+  \begin{syntaxExample}{#1}{#2}
+      \lstinputlisting[backgroundcolor=\color{syntaxbox-colback}, language=XML]{#3}
+      \IfValueTF{#4}{
+           \par\noindent\tikz{\draw [dash pattern=on 4pt off 4pt] (0,0) -- (\textwidth+4.5mm,0);}\par\textbf{Example Usage:}\par  %4.5mm is the margin of the box above^^
+          \IfValueTF{#5}{\lstinputlisting[backgroundcolor=\color{syntaxbox-colback}, language=#5]{#4}}{\lstinputlisting[backgroundcolor=\color{syntaxbox-colback}, language=C]{#4}}
+      }{}
+  \end{syntaxExample}
+}
+
+%================================
+% Task box
+% Example:
+% \newtask{name}{label}{task_items}
+% \newtask{Customer Billing System}{billing system}{{
+%   \item Overview...
+%   \item Functional Requirements...
+%   \item Non-Functional Requirements...
+% }}
+%================================
+\definecolor{taskbox-colback}{HTML}{F5F5F5}
+\definecolor{taskbox-colframe}{HTML}{D3D3D3}
+
+
+\tcbuselibrary{theorems,skins,hooks,listings, breakable}
+
+\newtcbtheorem[number within=section]{taskExample}{Task \textsection\hspace*{-0.3em}}{
+  breakable,
+  enhanced,
+  colframe=taskbox-colframe,
+  sharp corners=downhill,
+  boxrule=1mm, % thickness of the box
+  leftrule=4.5mm, % thickness on the left
+  left=0mm,
+  rightrule=1mm, % thickness on the right
+  bottomrule=1mm, % thickness on the bottom
+  colback=taskbox-colback,
+  coltitle=black,
+  fonttitle=\normalsize\sffamily\bfseries, 
+  fontupper=\small, 
+  fontlower=\small
+}{task}
+
+\NewDocumentCommand{\newtask}{mmm}{
+  \begin{taskExample}{#1}{#2}
+    #3
+  \end{taskExample}
+}
+
+%================================
+% Table
+% Example:
+%================================
+\newtcolorbox[blend into=tables]{mytable}[2][]{float=htb, halign=center,  title={#2}, every float=\centering, #1}
+%================================
+% Code box
+% Example:
+% \newlisting{name}{label}{language}{file_path}
+% \newlisting{Your first C program!}{intro code}{C}{intro_and_c/code/intro.c}
+%================================
+\definecolor{tablebox-colback}{HTML}{5e5e5e}
+\definecolor{tablebox-colframe}{HTML}{545454}
+
+\tcbuselibrary{theorems,skins,hooks,listings}
+\newtcbtheorem[number within=section]{tableExample}{Table \textsection\hspace*{-0.3em}}{
+  listing and comment,
+  listing options={
+    language=C, 
+    mathescape=true
+  },
+  float=htb, 
+  halign=center, 
+  every float=\centering,
+  colframe=tablebox-colframe,
+  sharp corners=downhill,
+  boxrule=1mm, %tykkelse på hele boks
+  left=0mm,
+  colback=tablebox-colback,
+  coltitle=white,
+  coltext=white,
+  fonttitle=\normalsize\sffamily\bfseries, 
+  fontupper=\small, 
+  fontlower=\small
+}{table}
+
+\NewDocumentCommand\newtable{mmm}{\begin{tableExample}{#1}{#2}#3\end{tableExample}}
+
+
