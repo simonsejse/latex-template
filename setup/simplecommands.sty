@@ -91,15 +91,43 @@
 % Note: The command name should not include the backslash and the arguments should be separated by commas without spaces.
 %
 % Version 1.0, last updated 01-08-2023
-\newcommand{\showcaseBoxCommand}[2]{%
+\NewDocumentCommand{\showcaseBoxCommand}{m m g}{%
   Command used:
-  \begin{itemize}
-    \item $\backslash$#1\ProcessArgs{#2}
+  \begin{itemize}[topsep=0pt]
+    \item $\backslash$#1
+    \IfNoValueTF{#3}
+    {\ProcessArgs{#2}}
+    {\ProcessArgs{#2}{#3}}
   \end{itemize}
 }
-\newcommand{\ProcessArgs}[1]{%
-  \forcsvlist{\ProcessArg}{#1}
+
+\NewDocumentCommand{\ProcessArgs}{m g}{%
+   \forcsvlist{\ProcessArg}{#1}
+    \IfNoValueTF{#2}{%
+    
+    }{%
+        \begin{itemize}[topsep=0pt, nosep]
+            \pairedProcess{#1}{#2}
+        \end{itemize}
+    }
 }
+
+\ExplSyntaxOn
+\NewDocumentCommand{\pairedProcess}{mm}
+ {
+  \seq_set_from_clist:Nn \l_tmpa_seq { #1 }
+  \seq_set_from_clist:Nn \l_tmpb_seq { #2 }
+  \seq_mapthread_function:NNN \l_tmpa_seq \l_tmpb_seq \process_pair:nN
+ }
+
+\cs_new_protected:Nn \process_pair:nN
+ {
+  \item \newword{#1}:~\term{#2}
+ }
+\ExplSyntaxOff
+
+\NewDocumentCommand\ProcessParameterArg{m}{\item #1}
+
 \newcommand{\ProcessArg}[1]{%
   \{\wrapXML{\textit{#1}}\}
 }
