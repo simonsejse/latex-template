@@ -1,1 +1,1 @@
-\newsyntax{<name>}{<label>}{<file>}{<optional file>)}{<optional language>}
+<return type> (*<pointer variable name>)(<parameters>);

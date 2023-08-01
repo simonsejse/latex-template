@@ -1,1 +1,19 @@
-\newsyntax{Syntax for syntax box}{syntax label}{syntax/syntax}{syntax/syntax}{xml}
+#include <stdio.h>
+
+int sum(int a, int b){
+    return a + b;
+}
+
+int main() {
+    // Declare the function pointer
+    int (*functionPointer)(int, int);
+
+    // Point the function pointer to the sum function
+    functionPointer = &sum;
+
+    // Now you can use the function pointer to call sum
+    int result = functionPointer(5, 6);
+    
+    printf("The sum is %d", result);
+    return 0;
+}

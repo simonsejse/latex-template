@@ -66,3 +66,61 @@
 %
 % Version 1.0, last updated 18-07-2023
 \NewDocumentCommand\notice{m}{\textbf{Notice:} \emph{#1}\par}
+
+
+% -------------------------------------------------
+% Commenting on the showcaseBoxCommand
+% -------------------------------------------------
+% \showcaseBoxCommand{<command_name>}{<arguments>}
+%
+% This command outputs the given LaTeX command along with its arguments, demonstrating its use. The command is presented in an itemized list, and each argument is processed individually for clarity.
+%
+% Arguments:
+% #1: The name of the LaTeX command.
+% #2: A comma-separated list of arguments to the command.
+%
+% Usage:
+% \showcaseBoxCommand{Command name}{Arguments}
+%
+% Example:
+% \showcaseBoxCommand{emph}{This is important}
+% This would produce:
+% Command used:
+% * \emph{This is important}
+%
+% Note: The command name should not include the backslash and the arguments should be separated by commas without spaces.
+%
+% Version 1.0, last updated 01-08-2023
+\newcommand{\showcaseBoxCommand}[2]{%
+  Command used:
+  \begin{itemize}
+    \item $\backslash$#1\ProcessArgs{#2}
+  \end{itemize}
+}
+\newcommand{\ProcessArgs}[1]{%
+  \forcsvlist{\ProcessArg}{#1}
+}
+\newcommand{\ProcessArg}[1]{%
+  \{\wrapXML{\textit{#1}}\}
+}
+
+
+% -------------------------------------------------
+% Commenting on the wrapXML command
+% -------------------------------------------------
+% \wrapXML{<content>}
+%
+% This command wraps the provided content within less than and greater than symbols, "<" and ">", to format it as an XML/HTML tag.
+%
+% Arguments:
+% #1: The content that will be wrapped as an XML/HTML tag.
+%
+% Usage:
+% \wrapXML{Content here}
+%
+% Example:
+% \wrapXML{example}
+% This produces: <example>
+%
+% Version 1.0, last updated 01-08-2023
+\NewDocumentCommand\wrapXML{m}{<#1>}
