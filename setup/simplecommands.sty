@@ -91,9 +91,11 @@
 % Note: The command name should not include the backslash and the arguments should be separated by commas without spaces.
 %
 % Version 1.0, last updated 01-08-2023
+\usepackage{titlesec}
+
 \NewDocumentCommand{\showcaseCommand}{m m g}{%
   Below is the command that is used:
-  \begin{itemize}[topsep=0pt]
+  \begin{itemize}[topsep=0pt, label=\color{light-gold}$\star$]
     \item $\backslash$#1
     \IfNoValueTF{#3}
     {\ProcessArgs{#2}}
@@ -103,12 +105,15 @@
 
 \NewDocumentCommand{\ProcessArgs}{m g}{%
    \forcsvlist{\ProcessArg}{#1}
-   \ifvmode\else\par\fi % Ensure we're in vertical mode
-   \noindent\hspace*{-2.5em}These are the descriptions of the parameters:
     \IfNoValueTF{#2}{%
-    
+   
     }{%
-        \begin{itemize}[topsep=0pt, nosep]
+        \begin{itemize}[topsep=0pt, nosep] 
+            \begingroup
+            \titleformat*{\subsubsection}{\normalfont\normalsize}
+            \titlespacing*{\subsubsection}{-47px}{1pt}{-2pt}
+            \subsubsection*{These are the descriptions of the parameters:}
+            \endgroup
             \pairedProcess{#1}{#2}
         \end{itemize}
     }
