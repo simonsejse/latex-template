@@ -6,7 +6,9 @@ The LaTeX template that I personally use for writing reports & documents during 
 Preview at: [latex_template.pdf](https://github.com/simonsejse/latex-template/blob/main/latex_template.pdf)
 
 # 💁 Can I use this?
-Yes, you can use this all you want for creating documents, modification and distributions are not allowed. For more read License [Attribution-NoDerivs 3.0 Unported](https://creativecommons.org/licenses/by-nd/3.0/legalcode).
+Yes, you can use this all you want for creating documents and reports. 
+
+Modification and distribution are not allowed. For more read License [Attribution-NoDerivs 3.0 Unported](https://creativecommons.org/licenses/by-nd/3.0/legalcode).
 
 # 🪪 License
 
