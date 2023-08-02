@@ -1,9 +1,19 @@
 ![wave](https://github.com/simonsejse/latex-template/assets/20711558/b5add218-a4f8-4097-9e80-88a771946e75)
 
-# 📝 latex-template
-The LaTeX template that I personally use for writing reports & documents during my studying @ Computer Science, Copenhagen University.
+<div align="center">
 
-Preview at: [latex_template.pdf](https://github.com/simonsejse/latex-template/blob/main/latex_template.pdf)
+# 📝 latex-template
+🎓📚🔬 The LaTeX template that I personally use for writing reports & documents during my studying at Computer Science, Copenhagen University. 🖥️💡📖
+
+<h3 style="font-size: 26px;"> 
+  📥 Preview at: <br/>
+  <a href="https://github.com/simonsejse/latex-template/blob/main/latex_template.pdf">
+    📄 latex_template.pdf
+  </a>
+</h3>
+
+
+
 
 # 💁 Can I use this?
 Yes, you can use this all you want for creating documents and reports. 
@@ -22,3 +32,4 @@ TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY
 BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS
 CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
 CONDITIONS.
+</div>
