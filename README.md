@@ -6,7 +6,7 @@ Feel free to use it as you like. If you do decide to modify or make changes to i
 Preview at: [latex_template.pdf](https://github.com/simonsejse/latex-template/blob/main/latex_template.pdf)
 
 # 💁 Can I use this?
-Yes, you can use this all you want for creating documents, modification and distributions are not allowed. For more read License [https://creativecommons.org/licenses/by-nd/3.0/legalcode](Attribution-NoDerivs 3.0 Unported)
+Yes, you can use this all you want for creating documents, modification and distributions are not allowed. For more read License [Attribution-NoDerivs 3.0 Unported](https://creativecommons.org/licenses/by-nd/3.0/legalcode).
 
 # 🪪 License
 
