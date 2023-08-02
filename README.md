@@ -1,8 +1,7 @@
-
-![wave](https://github.com/simonsejse/latex-template/assets/20711558/75af83d6-284a-4d54-919d-def96b5c93a7)
+![wave](https://github.com/simonsejse/latex-template/assets/20711558/b5add218-a4f8-4097-9e80-88a771946e75)
 
 # 📝 latex-template
-My LaTeX template that I personally use for writing reports & documents during my studying @ Computer Science, Copenhagen University.
+The LaTeX template that I personally use for writing reports & documents during my studying @ Computer Science, Copenhagen University.
 
 Preview at: [latex_template.pdf](https://github.com/simonsejse/latex-template/blob/main/latex_template.pdf)
 
