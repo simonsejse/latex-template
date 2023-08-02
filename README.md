@@ -1,3 +1,6 @@
+
+![wave](https://github.com/simonsejse/latex-template/assets/20711558/75af83d6-284a-4d54-919d-def96b5c93a7)
+
 # 📝 latex-template
 The latex template that I personally use for computer science @ Copenhagen University. 
 
