@@ -2,18 +2,19 @@
 
 I've used \term{tcolorbox} to create a bunch of different boxes that can be used throughout the program. Look in the \term{boxes.tex} file, to see how they're defined and used.
 
-TODO: MAYBE WRITE SOMETHING ABOUT THE SHOWCASEBOXCOMMAND
-
+\subsection{Sample ShowcaseCommand Demonstration}
+Just for fun, I'll also showcase one of the commands that are used a lot throughout this document to show how commands are used.
+\textcolor{red}{Not done yet.}
 \subsection{Sample Syntax Demonstrations}
 Here we will demonstrate how the syntax box works and is used. 
 
 \subsubsection*{Without example usage:}
-\showcaseBoxCommand{newsyntax}{title,label,syntax file}{The title of the syntax box, the unique identifier for cross-referencing, the file path to the syntax definition file}
+\showcaseCommand{newsyntax}{title,label,syntax file}{The title of the syntax box, the unique identifier for cross-referencing, the file path to the syntax definition file}
 
 \newsyntax{Syntax for creating function pointer in C without usage}{syntax label}{box_extensions_crap/syntax/syntax}
 
 \subsubsection*{With example usage:}
-\showcaseBoxCommand{newsyntax}{title, label, syntax file, output file, output lang}{The title of the syntax box, the unique identifier for cross-referencing, the file path to the syntax definition file, the file path to the output example file, the programming language used in the output example.}
+\showcaseCommand{newsyntax}{title, label, syntax file, output file, output lang}{The title of the syntax box, the unique identifier for cross-referencing, the file path to the syntax definition file, the file path to the output example file, the programming language used in the output example.}
 
 \newsyntax{Syntax for creating function pointer in C with usage}{syntax label}{box_extensions_crap/syntax/syntax}{box_extensions_crap/syntax/output}{C}
 
@@ -21,7 +22,7 @@ Here we will demonstrate how the syntax box works and is used.
 These boxes allow you to present various types of code snippets, whether they produce an output or not. We've showcased this flexibility with C and Java code examples. This framework isn't limited to just these languages - if \term{lstlisting} doesn't include your desired language, you have the freedom to create your own set. It's a versatile way to enhance code visibility and comprehension.
 
 \subsubsection{C and Java Code Example (No Output)}
-\showcaseBoxCommand{newlisting}{title, label, code language, code file}{The title of the code listing, the unique identifier for cross-referencing, the programming language of the code, the file path to the source code file}
+\showcaseCommand{newlisting}{title, label, code language, code file}{The title of the code listing, the unique identifier for cross-referencing, the programming language of the code, the file path to the source code file}
 
 
 \newlisting{A \term{C} code example \emph{without} output}{c example code}{C}{box_extensions_crap/code/program.c}
@@ -30,12 +31,12 @@ These boxes allow you to present various types of code snippets, whether they pr
 
 
 \subsubsection{C Code Example (Includes Output)}
-\showcaseBoxCommand{newlisting}{title, label, code language, code file, example file}{The title of the code listing, the unique identifier for cross-referencing, the programming language of the code, the file path to the source code file, the file path to an example output or use of the code.}
+\showcaseCommand{newlisting}{title, label, code language, code file, example file}{The title of the code listing, the unique identifier for cross-referencing, the programming language of the code, the file path to the source code file, the file path to an example output or use of the code.}
 
 \newlisting{A \term{C} code example \emph{with} output}{c example code}{C}{box_extensions_crap/code/program.c}{box_extensions_crap/code/output}
 
 \subsection{Sample Lemma Demonstrations}
-\showcaseBoxCommand{mlenma}{title, label, content}{The title of the lemma, The unique identifier for cross-referencing, The content of the lemma}
+\showcaseCommand{mlenma}{title, label, content}{The title of the lemma, The unique identifier for cross-referencing, The content of the lemma}
 
 \mlenma{Arithmetic Sum Lemma}{ArithSum}{
 The sum $S$ of an arithmetic sequence with first term $a$, common difference $d$, and $n$ terms is given by: $S = \frac{n}{2} [2a + (n - 1)d]$.
@@ -44,7 +45,7 @@ Proof:
 Adding the sequence $a, a+d, \ldots, a+(n-1)d$ to its reverse yields $2S = n [2a + (n-1)d]$. Thus, $S = \frac{n}{2} [2a + (n - 1)d]$. QED.
 }
 \subsection{Sample Definition Demonstrations}
-\showcaseBoxCommand{newdfn}{title, label, content}{The title of the definition, The unique identifier for cross-referencing, The detailed explanation or description}
+\showcaseCommand{newdfn}{title, label, content}{The title of the definition, The unique identifier for cross-referencing, The detailed explanation or description}
 \newdfn{VSpace}{Vector Space}{%
 A vector space $(V, F)$ over a field $F$ (usually $\mathbb{R}$ or $\mathbb{C}$) is a set $V$ along with two operations, vector addition and scalar multiplication, satisfying the following axioms:\\
 1. $\forall \mathbf{u}, \mathbf{v} \in V$, $\mathbf{u} + \mathbf{v} \in V$.\\
