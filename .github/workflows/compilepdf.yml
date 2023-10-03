@@ -22,6 +22,6 @@ jobs:
           git config --local user.name "GitHub Action"
           git add root.pdf
           git commit -m "Add generated PDF" -a
-          git remote set-url origin https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/simonsejse/latex-template.git
+          git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/simonsejse/latex-template.git
           git push
 
