@@ -22,7 +22,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add root.pdf
           git commit -m "Add generated PDF" -a
-          echo "x-access-token:${{ secrets.TOKEN }}" | git credential approve
-          git push
+          git push https://x-access-token:${{ secrets.TOKEN }}@github.com/simonsejse/latex-template.git HEAD:main
       
+            
 
