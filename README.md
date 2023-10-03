@@ -7,8 +7,8 @@
 
 <h3 style="font-size: 26px;"> 
   📥 Preview at: <br/>
-  <a href="https://github.com/simonsejse/latex-template/blob/main/latex_template.pdf">
-    📄 latex_template.pdf
+  <a href="https://github.com/simonsejse/latex-template/blob/main/root.pdf">
+    📄 root.pdf
   </a>
 </h3>
 
