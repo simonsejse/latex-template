@@ -13,8 +13,6 @@
 </h3>
 
 
-
-
 # 💁 Can I use this?
 Yes, you can use this all you want for creating documents and reports. 
 
