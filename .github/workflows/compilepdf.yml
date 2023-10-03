@@ -21,11 +21,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add root.pdf
-          if git diff-index --quiet HEAD --; then
-            echo "No changes to commit"
-          else
-            git commit -m "Add generated PDF"
-            git push https://x-access-token:${{ secrets.TOKEN }}@github.com/simonsejse/latex-template.git HEAD:main
-          fi
-
+          git commit -m "Add generated PDF" -a
+          echo "x-access-token:${{ secrets.TOKEN }}" | git credential approve
+          git push
+      
 
