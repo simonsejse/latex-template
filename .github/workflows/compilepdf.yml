@@ -1,5 +1,8 @@
 name: Build LaTeX document
-on: [push]
+on: 
+  push:
+    paths-ignore:
+      - root.pdf
 
 jobs:
   build_latex:
