@@ -37,7 +37,13 @@ The commands below are typically used to save time when typesetting common mathe
 \textbackslash rl & $\l.\rl$ & (close line) \\
 \textbackslash lb & $\lb\r.$ & (open brace) \\
 \textbackslash rb & $\l.\rb$ & (close brace) \\
-
+\textbackslash del & $\del$ & nabla or del operator \\
+\textbackslash eps & $\eps$ & epsilon \\
+\textbackslash inv & $\inv$ & inverse \\
+\textbackslash pa & $\pa$ & partial derivative \\
+\textbackslash vp & $\vp$ & phi \\
+\textbackslash y & $\y$ & infinity \\
+\textbackslash th & $\th$ & theta \\
 \end{tabular}
 
 \vspace{0.1in}
@@ -49,19 +55,41 @@ These macros are particularly useful when dealing with more complex mathematical
 \vspace{0.1in}
 
 \noindent
-\begin{tabular}{lcl}
+\noindent
+\textbf{Macros and their Descriptions:}
 
-\textbackslash vfunc\{name\}\{domain\}\{codomain\}\{element\}\{image\} & $\vfunc{\mathtt{name}}{\mathtt{domain}}{\mathtt{codomain}}{\mathtt{element}}{\mathtt{image}}$ & (a \emph{verbose function} declaration) \\
-\textbackslash pdif\{function\}\{variable\}\{order\} & $\pdif{\mathtt{function}}{\mathtt{variable}}{\mathtt{order}}$ & (partial differentiation) \\
-\textbackslash del & $\del$ & (nabla or del operator) \\
-\textbackslash eps & $\eps$ & (epsilon) \\
-\textbackslash inv & $\inv$ & (inverse) \\
-\textbackslash pa & $\pa$ & (partial derivative) \\
-\textbackslash vp & $\vp$ & (phi) \\
-\textbackslash y & $\y$ & (infinity) \\
-\textbackslash th & $\th$ & (theta) \\
+\vspace{0.5cm}
 
-\end{tabular}
+\noindent
+\textbf{Verbose Function Declaration:}
+
+\textbackslash vfunc\{name\}\{domain\}\{codomain\}\{element\}\{image\}
+
+\[
+\vfunc{\mathtt{name}}{\mathtt{domain}}{\mathtt{codomain}}{\mathtt{element}}{\mathtt{image}}
+\]
+
+\[
+\vfunc{f}{\R}{\R}{x}{x^2}
+\]
+
+This macro provides a verbose declaration of a function.
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{Partial Differentiation:}
+
+\textbackslash pdif\{function\}\{variable\}\{order\}
+
+\[
+\pdif{\mathtt{function}}{\mathtt{variable}}{\mathtt{order}}
+\]
+
+This macro is used for representing partial differentiation.
+
+\vspace{0.5cm}
+
 
 \subsection{Groups}
 
