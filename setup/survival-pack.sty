@@ -247,11 +247,9 @@
 \def\th{\theta}
 
 % Math: Sometimes helpful macros
-%\newcommand{\func}[3]{#1\colon#2\to#3}
-\newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto#5}
-%\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
-%\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
-\newcommand{\pdif}[3]{\frac{\partial^{#3}#1}{\partial#2^{#3}}}
+\newcommand{\function}[3]{#1\colon#2\to#3}
+\newcommand{\vfunc}[5]{\function{#1}{#2}{#3},\quad#4\longmapsto#5}
+\newcommand{\pdif}[3]{\frac{\pa^{#3}#1}{\pa#2^{#3}}}
 
 
 % other shorthands
