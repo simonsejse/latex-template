@@ -258,3 +258,20 @@
 \NewDocumentCommand\mono{m}{\texttt{#1}} % deprecated
 \NewDocumentCommand\email{m}{\texttt{\href{mailto:#1}{#1}}}
 
+% Table shortcuts
+\newcommand{\easytable}[3]{
+    \begin{table}[h]
+        \centering
+        \addtolength{\leftskip} {-2cm}
+        \addtolength{\rightskip}{-2cm}
+        \caption{#1}
+        \begin{tabular}{lccccccc}
+            \toprule
+            #2 \\ % This is the header
+            \midrule
+            #3  % This is the content
+            \bottomrule
+        \end{tabular}
+    \end{table}
+}
+
