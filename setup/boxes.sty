@@ -130,11 +130,13 @@
   },
   colframe=codebox-colframe,
   sharp corners=downhill,
-  boxrule=1mm, %tykkelse på hele boks
+  boxrule=0.5mm, %tykkelse på hele boks
   leftrule=4.5mm, %tykkelse på v
   left=0mm,
+  bottom=0mm,
+  top=00mm,
   rightrule=1mm, %tykkelse på h
-  bottomrule=1mm, %tykkelse på h
+  bottomrule=0.7mm, %tykkelse på h
   colback=codebox-colback,
   coltitle=white,
   fonttitle=\normalsize\sffamily\bfseries, 
@@ -142,15 +144,16 @@
   fontlower=\small
 }{code}
 
-\NewDocumentCommand{\newlisting}{mmmmg}{
+\NewDocumentCommand{\newlisting}{mmmmgg}{
   \begin{codeExample}{#1}{#2}
       \lstinputlisting[backgroundcolor=\color{codebox-colback}, language=#3]{#4}
       \IfValueTF{#5}{
           \par\noindent\tikz{\draw [dash pattern=on 4pt off 4pt] (0,0) -- (\textwidth+4.5mm,0);}\par\textbf{Example Output:}\par  %4.5mm is the margin of the box above^^
-          \lstinputlisting[backgroundcolor=\color{codebox-colback}, language=#3]{#5}
+          \lstinputlisting[backgroundcolor=\color{codebox-colback}, language=#6]{#5}
       }{}
   \end{codeExample}
 }
+
 
 
 %================================
